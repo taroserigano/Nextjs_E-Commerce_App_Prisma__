@@ -12,6 +12,8 @@ export async function emailOrderHistory(
   prevState: unknown,
   formData: FormData
 ): Promise<{ message?: string; error?: string }> {
+
+  // It is similar to the parse() function, but it does not throw an error if the data is not valid.
   const result = emailSchema.safeParse(formData.get("email"))
 
   if (result.success === false) {
